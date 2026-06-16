@@ -408,7 +408,7 @@ export default function Properties() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/properties");
+       const API_URL = import.meta.env.VITE_API_URL;
         setProperties(res.data);
       } catch (error) {
         console.log(error);

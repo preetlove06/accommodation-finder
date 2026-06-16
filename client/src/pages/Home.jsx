@@ -288,7 +288,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/properties");
+       const API_URL = import.meta.env.VITE_API_URL;
         setDisplayProperties(res.data.slice(0, 6));
       } catch (error) {
         console.log(error);
