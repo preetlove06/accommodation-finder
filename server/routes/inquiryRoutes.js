@@ -3,7 +3,7 @@ const {
   getInquiries,
   createInquiry,
   updateInquiryStatus,
-} = require("../controllers/inquiryController");
+} = require("../controllers/InquiryController");
 
 const router = express.Router();
 
