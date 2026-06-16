@@ -406,20 +406,29 @@ export default function Properties() {
   });
 
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-       const API_URL = import.meta.env.VITE_API_URL;
-        setProperties(res.data);
-      } catch (error) {
-        console.log(error);
-        alert("Failed to load properties");
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchProperties = async () => {
+    try {
+      const API_URL = import.meta.env.VITE_API_URL;
 
-    fetchProperties();
-  }, []);
+      console.log("API URL:", API_URL);
+
+      const res = await axios.get(
+        `${API_URL}/api/properties`
+      );
+
+      console.log("Properties:", res.data);
+
+      setProperties(res.data);
+    } catch (error) {
+      console.error("Property fetch error:", error);
+      alert("Failed to load properties");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  fetchProperties();
+}, []);
 
   const handleFilterChange = (key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
