@@ -348,7 +348,7 @@ export default function PropertyDetails() {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await axios.get(`${API_URL}/properties/${id}`);
+        const res = await axios.get(`${API_URL}/api/properties/${id}`);
         setProperty(res.data);
       } catch (error) {
         console.log(error);

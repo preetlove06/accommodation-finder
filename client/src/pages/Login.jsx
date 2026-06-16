@@ -27,7 +27,7 @@ export default function Login() {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${API_URL}/auth/login`, form);
+      const res = await axios.post(`${API_URL}/api/auth/login`, form);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
