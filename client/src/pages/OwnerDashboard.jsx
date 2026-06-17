@@ -289,7 +289,7 @@ function SubmissionCard({ sub, refreshData }) {
 
   const approveAndPublish = async () => {
     try {
-      await axios.post(`${API_URL}/properties`, {
+      await axios.post(`${API_URL}/api/properties`, {
         title: sub.title,
         description: sub.description,
         property_type: sub.property_type,
