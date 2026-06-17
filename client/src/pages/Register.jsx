@@ -34,7 +34,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      await axios.post(`${API_URL}/auth/register`, {
+      await axios.post(`${API_URL}/api/auth/register`, {
         name: form.name,
         email: form.email,
         password: form.password,

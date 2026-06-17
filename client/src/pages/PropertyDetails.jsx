@@ -205,7 +205,7 @@ function InquiryForm({ property }) {
     try {
       setSubmitting(true);
 
-      await axios.post(`${API_URL}/inquiries`, {
+      await axios.post(`${API_URL}/api/inquiries`, {
         ...formData,
         property_id: property._id,
         property_title: property.title,

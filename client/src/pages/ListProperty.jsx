@@ -216,7 +216,7 @@ export default function ListProperty() {
     try {
       setSubmitting(true);
 
-      await axios.post(`${API_URL}/submissions`, {
+      await axios.post(`${API_URL}/api/submissions`, {
         ...form,
         price_per_night: Number(form.price_per_night) || 0,
         bedrooms: form.bedrooms ? Number(form.bedrooms) : undefined,
