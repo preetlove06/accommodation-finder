@@ -168,7 +168,7 @@ function InquiryCard({ inquiry, refreshData }) {
 
   const updateInquiryStatus = async (status) => {
     try {
-      await axios.put(`${API_URL}/inquiries/${inquiry._id}`, { status });
+      await axios.put(`${API_URL}/api/inquiries/${inquiry._id}`, { status });
       refreshData();
     } catch (error) {
       alert("Failed to update inquiry");
@@ -280,7 +280,7 @@ function SubmissionCard({ sub, refreshData }) {
 
   const updateSubmissionStatus = async (status) => {
     try {
-      await axios.put(`${API_URL}/submissions/${sub._id}`, { status });
+      await axios.put(`${API_URL}/api/submissions/${sub._id}`, { status });
       refreshData();
     } catch (error) {
       alert("Failed to update submission");
@@ -307,7 +307,7 @@ function SubmissionCard({ sub, refreshData }) {
         is_featured: false,
       });
 
-      await axios.put(`${API_URL}/submissions/${sub._id}`, {
+      await axios.put(`${API_URL}/api/submissions/${sub._id}`, {
         status: "approved",
       });
 
@@ -442,9 +442,9 @@ export default function Dashboard() {
       setLoading(true);
 
       const [inqRes, subRes, propRes] = await Promise.all([
-        axios.get(`${API_URL}/inquiries`),
-        axios.get(`${API_URL}/submissions`),
-        axios.get(`${API_URL}/properties`),
+        axios.get(`${API_URL}/api/inquiries`),
+        axios.get(`${API_URL}/api/submissions`),
+        axios.get(`${API_URL}/api/properties`),
       ]);
 
       setInquiries(inqRes.data);
