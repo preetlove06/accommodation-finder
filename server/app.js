@@ -10,8 +10,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://stayfinder-lovepreet.netlify.app",
-    "https://6a310a38f565c45a310c0633--stayfinder-lovepreet.netlify.app"
+    "https://stayfinder-love.netlify.app",
+    "https://6a310a38f565c45a310c0633--stayfinder-love.netlify.app"
   ],
   credentials: true
 }));
